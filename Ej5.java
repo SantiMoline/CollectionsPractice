@@ -22,6 +22,7 @@ public class Ej5 {
         } else {
             System.out.println("Error al intentar quitar el país. El país indicado no se encontraba en la lista.");
         }
+
         scan.close();
     }
 

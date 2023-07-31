@@ -1,6 +1,5 @@
 package Ej5.Entities;
-
-import java.util.Comparator;
+import java.util.Objects;
 
 public class Pais {
     String nombre;
@@ -18,13 +17,22 @@ public class Pais {
         this.nombre = nombre;
     }
 
-    //Comparator.
-    public static Comparator<Pais> compararNombre = new Comparator<Pais>() {
-        @Override
-        public int compare(Pais p1, Pais p2) {
-            return (p1.getNombre().compareTo(p2.getNombre()));
+    // equals() & hashCode()
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof Pais)) {
+            return false;
         }
-    };
+        Pais pais = (Pais) o;
+        return Objects.equals(nombre, pais.nombre);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(getNombre());
+    }
 
     //toString
     @Override
@@ -32,5 +40,5 @@ public class Pais {
         return
             "---Pais: " + getNombre() + "---";
     }
-
+    
 }

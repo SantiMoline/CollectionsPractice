@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.Scanner;
 
 import Ej5.Entities.Pais;
+import Ej5.Utilities.PaisComparator;
 
 public class PaisService {
     private HashSet<Pais> paises = new HashSet<>();
@@ -41,7 +42,7 @@ public class PaisService {
      */
     public void mostrarOrdenadosAlfabeticamente() {
         ArrayList<Pais> listaPaises= new ArrayList<Pais>(paises);
-        listaPaises.sort(Pais.compararNombre);
+        listaPaises.sort(PaisComparator.compararNombre);
         for (Pais pais : listaPaises) {
             System.out.println(pais);
         }
