@@ -49,7 +49,7 @@ public class ProductoService {
             for (Map.Entry<String, Double> entry : products.entrySet()) {
             System.out.print("\nProduct: " + entry.getKey());
             System.out.print(", Price: " + entry.getValue());
-        }
+            }
         }
 
 
